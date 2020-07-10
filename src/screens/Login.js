@@ -30,7 +30,7 @@ export default function Login ({navigation}) {
                 underlineColorAndroid="transparent"
                 placeholderTextColor="#212121"
                 placeholder="Your name"
-                autoCorrect={false}
+                autoFocus={true}
                 keyboardType="default"
                 style={loginStyles.txtInput}
                 onChangeText={email => console.log(email)}
