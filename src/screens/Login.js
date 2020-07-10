@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import loginStyles from "../styles/loginStyles";
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default function Login ({navigation}) {
 
+  const [name,setName]=useState('')
+
   function handleSubmit() {
+    console.log("login")
+    AsyncStorage.setItem("userName",name)
     navigation.navigate("AppStack")
   }
     return (
@@ -27,9 +32,10 @@ export default function Login ({navigation}) {
                 placeholderTextColor="#212121"
                 placeholder="Your name"
                 autoFocus={true}
+                value={name}
                 keyboardType="default"
                 style={loginStyles.txtInput}
-                onChangeText={email => console.log(email)}
+                onChangeText={setName}
                 blurOnSubmit={false}
                 />
             </KeyboardAvoidingView>

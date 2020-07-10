@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView, Image, Text, View } from "react-native";
 import styles from "../styles/styles";
 import profileStyles from "../styles/profileStyles";
+import AsyncStorage from '@react-native-community/async-storage';
 
 import ImageBox from '../components/ImageBox'
 
 export default function Profile (props) {
+  const [name,setName]=useState('')
+  useEffect(()=>{
+    const uname= AsyncStorage.getItem('userName').then((data)=>{setName(data)})
+  })
 
     return (
         <View style={styles.container}>
@@ -22,7 +27,7 @@ export default function Profile (props) {
                 </View>
                 <View style={profileStyles.nameHolder}>
                   <Text style={profileStyles.profileName}>
-                    fname lname
+                    {name}
                   </Text>
                 </View>
               </View>
