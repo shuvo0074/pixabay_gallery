@@ -21,11 +21,7 @@ export default function Login ({navigation}) {
 
           {/* title and input starts */}
           <View style={loginStyles.loginEmailTop}>
-            {/* <Image
-              style={loginStyles.loginEmailTitle}
-              source={require("../res/img/pixabay_logo.png")}
-            /> */}
-            <KeyboardAvoidingView style={loginStyles.loginEmailForm}>
+            <KeyboardAvoidingView>
               <TextInput
                 underlineColorAndroid="transparent"
                 placeholderTextColor="#212121"
