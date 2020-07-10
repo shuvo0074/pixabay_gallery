@@ -9,7 +9,8 @@
 import React from 'react';
 import {
   StyleSheet,
-  StatusBar
+  StatusBar,
+  ScrollView
 } from 'react-native';
 
 import {
@@ -17,12 +18,18 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import ImageBox from './src/components/ImageBox'
+import LargeCardSlider from './src/components/LargeCardSlider';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={styles.scrollView}>
+        <LargeCardSlider/>
         <ImageBox/>
+      </ScrollView>
     </>
   );
 };
