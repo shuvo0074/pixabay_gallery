@@ -1,4 +1,5 @@
 import {
+  Platform,
   Dimensions
 } from "react-native";
 
@@ -105,5 +106,9 @@ export default{
     ...material.body1Object,
     ...systemWeights.regular,
     color: '#455A64',
+  },
+  allBorderRadius: {
+    borderRadius: 5,
+    overflow: 'hidden'
   }
 }
