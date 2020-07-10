@@ -34,7 +34,7 @@ export default function LargeCardSlider (props) {
           return (
             <View style={cardStyles.largeSliderItem}>
               <TouchableOpacity onPress={() => props.navigation.navigate('ImageDetail',{id:rowData.id})}>
-                <View style={cardStyles.iosBorderRadius}>
+                <View style={cardStyles.imgBorderRadius}>
                   <FastImage
                     source={{uri:rowData.largeImageURL}}
                     style={cardStyles.largeSliderImg}
