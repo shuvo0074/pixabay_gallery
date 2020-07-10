@@ -33,7 +33,7 @@ export default function LargeCardSlider (props) {
         renderItem={({ item: rowData }) => {
           return (
             <View style={cardStyles.largeSliderItem}>
-              <TouchableOpacity onPress={() => console.log(rowData)}>
+              <TouchableOpacity onPress={() => props.navigation.navigate('ImageDetail',{id:rowData.id})}>
                 <View style={cardStyles.iosBorderRadius}>
                   <FastImage
                     source={{uri:rowData.largeImageURL}}
@@ -53,7 +53,7 @@ export default function LargeCardSlider (props) {
               <View style={cardStyles.playlistInfo}>
                 <TouchableOpacity
                   style={cardStyles.infoTxtHolder}
-                  onPress={() => console.log(rowData)}
+                  onPress={() => props.navigation.navigate('ImageDetail',{id:rowData.id})}
                 >
                   <Text numberOfLines={1} style={cardStyles.infoLarge}>
                   <Text numberOfLines={1} style={cardStyles.infoSmall}># </Text>

@@ -37,7 +37,7 @@ export default function ImageBox (props) {
             <View style={imageBoxStyles.imageItems}>
               <TouchableOpacity
                 style={cardStyles.allBorderRadius}
-                onPress={() => console.log(rowData)}
+                onPress={() => props.navigation.navigate('ImageDetail',{id:rowData.id})}
               >
                 <FastImage
                   source={{

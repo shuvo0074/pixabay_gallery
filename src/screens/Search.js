@@ -29,7 +29,7 @@ export default function Search () {
           {/*SearchBar ends*/}
 
           {
-            searchTerm.length>0?<ImageBox/>:<View/>
+            searchTerm.length>0?<ImageBox navigation={props.navigation}/>:<View/>
           }
 
           {searchTerm.length<=0 && (

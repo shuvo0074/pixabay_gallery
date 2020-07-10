@@ -5,7 +5,7 @@ import profileStyles from "../styles/profileStyles";
 
 import ImageBox from '../components/ImageBox'
 
-export default function Profile () {
+export default function Profile (props) {
 
     return (
         <View style={styles.container}>
@@ -55,7 +55,7 @@ export default function Profile () {
               </View>
               {/*  profile data ends  */}
               <ScrollView>
-              <ImageBox/>
+              <ImageBox navigation={props.navigation}/>
               <View
               style={{height:100}}
               />

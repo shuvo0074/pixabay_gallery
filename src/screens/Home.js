@@ -20,15 +20,15 @@ import {
 import ImageBox from '../components/ImageBox'
 import LargeCardSlider from '../components/LargeCardSlider';
 
-const Home: () => React$Node = () => {
+const Home: () => React$Node = (props) => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
-        <LargeCardSlider/>
-        <ImageBox/>
+        <LargeCardSlider navigation={props.navigation}/>
+        <ImageBox navigation={props.navigation}/>
       </ScrollView>
     </>
   );
