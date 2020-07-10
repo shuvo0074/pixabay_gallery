@@ -52,7 +52,7 @@ export default function Profile (props) {
               </View>
               {/*  profile data ends  */}
               <ScrollView>
-              <ImageBox navigation={props.navigation}/>
+              <ImageBox category="sports" navigation={props.navigation}/>
               <View
               style={{height:100}}
               />

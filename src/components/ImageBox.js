@@ -10,9 +10,14 @@ import FetchService from '../services/FetchService'
 
 export default function ImageBox (props) {
   const [hits,setHits]=useState([])
-  const [category,setCategory]=useState('Nature')
   useEffect(()=>{
-    let params=["orientation=vertical","category="+category,"editors_choice=true"]
+    let params=["orientation=vertical","editors_choice=true"]
+    if(props.searchTerm){
+      params.push("q="+props.searchTerm.replace(" ","+"))
+    }
+    if(props.category){
+      params.push("category="+props.category)
+    }
     FetchService("GET",params)
     .then((response)=>{
       setHits(response.hits)
@@ -24,7 +29,7 @@ export default function ImageBox (props) {
     <View style={imageBoxStyles.imageBox}>
       <View style={imageBoxStyles.imageHeader}>
         <Text style={cardStyles.cardTitleCenter}>
-          {category}
+          {props.category?props.category:"Search Results for "+props.searchTerm}
         </Text>
       </View>
       <FlatList

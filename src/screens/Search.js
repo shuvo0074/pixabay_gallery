@@ -7,7 +7,7 @@ import ImageBox from '../components/ImageBox'
 
 const window = Dimensions.get('window');
 
-export default function Search () {
+export default function Search (props) {
 
   const [searchTerm,setSearchTerm]=useState('')
     return (
@@ -29,7 +29,7 @@ export default function Search () {
           {/*SearchBar ends*/}
 
           {
-            searchTerm.length>0?<ImageBox navigation={props.navigation}/>:<View/>
+            searchTerm.length>0?<ImageBox searchTerm={searchTerm} navigation={props.navigation}/>:<View/>
           }
 
           {searchTerm.length<=0 && (

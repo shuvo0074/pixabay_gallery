@@ -28,7 +28,7 @@ const Home: () => React$Node = (props) => {
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
         <LargeCardSlider navigation={props.navigation}/>
-        <ImageBox navigation={props.navigation}/>
+        <ImageBox category="nature" navigation={props.navigation}/>
       </ScrollView>
     </>
   );
