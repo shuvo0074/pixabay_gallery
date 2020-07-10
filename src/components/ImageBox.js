@@ -41,7 +41,7 @@ export default function ImageBox (props) {
               >
                 <FastImage
                   source={{
-                    uri: rowData.webformatURL,
+                    uri: rowData.largeImageURL,
                     priority: FastImage.priority.normal
                   }}
                   style={imageBoxStyles.imageImg}
