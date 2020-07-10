@@ -22,10 +22,7 @@ export default function Profile (props) {
                 </View>
                 <View style={profileStyles.nameHolder}>
                   <Text style={profileStyles.profileName}>
-                    fname
-                  </Text>
-                  <Text style={profileStyles.profileName}>
-                    lname
+                    fname lname
                   </Text>
                 </View>
               </View>
@@ -39,7 +36,7 @@ export default function Profile (props) {
                     ve Liked
                   </Text>
                   <Text style={profileStyles.countTxt}>
-                    4224 Songs
+                    11 Photos
                   </Text>
                 </View>
                 <View style={profileStyles.dataCount}>
@@ -49,7 +46,7 @@ export default function Profile (props) {
                     re following
                   </Text>
                   <Text style={profileStyles.countTxt}>
-                    32345 Artists
+                    34 people
                   </Text>
                 </View>
               </View>
