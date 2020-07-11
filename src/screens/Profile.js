@@ -34,6 +34,7 @@ function Profile (props) {
               {/*  Profile info ends  */}
 
               {/*  profile data starts  */}
+              {/* Dummy data used as pixabay doesn't have any user api */}
               <View style={profileStyles.profileData}>
                 <View style={profileStyles.dataCount}>
                   <Text style={profileStyles.countTitle}>
