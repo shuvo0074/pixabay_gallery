@@ -11,5 +11,10 @@ Run these commands sequentially
 4. yarn start
 5. react-native run-android
 
+For ios:
+After step 4 from above
+1. cd ios && pod install && cd ..
+2. react-native run-ios
+
 You can use your own api key in env.js.
 Dummy data is used in profile screen as pixabay doesn't have any user api.
