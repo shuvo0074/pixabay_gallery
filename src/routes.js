@@ -11,6 +11,9 @@ import Search from './screens/Search'
 import Login from './screens/Login'
 import ImageDetail from './screens/ImageDetail'
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 const HomeStack = createCompatNavigatorFactory(createStackNavigator)(
 	{
 		Home: { screen: Home, navigationOptions:{headerShown:false}  },
@@ -87,5 +90,9 @@ const AppNavigator = createSwitchNavigator(
   )
 
 export default function Routes(){
-    return <NavigationContainer><AppNavigator/></NavigationContainer>
+    return (
+      <Provider store={store}>
+        <NavigationContainer><AppNavigator/></NavigationContainer>
+      </Provider>
+    )
 }
