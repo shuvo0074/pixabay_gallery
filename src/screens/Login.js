@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Image, KeyboardAvoidingView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import loginStyles from "../styles/loginStyles";
-import AsyncStorage from '@react-native-community/async-storage';
-
-export default function Login ({navigation}) {
+import { connect } from "react-redux";
+import { addUser } from "../actions";
+import store from '../store'
+function Login (props) {
 
   const [name,setName]=useState('')
 
   function handleSubmit() {
-    console.log("login")
-    AsyncStorage.setItem("userName",name)
-    navigation.navigate("AppStack")
+    store.dispatch(addUser(name))
+    props.navigation.navigate("AppStack")
   }
     return (
       <View style={loginStyles.loginCont}>
@@ -59,3 +59,4 @@ export default function Login ({navigation}) {
       </View>
     );
   }
+  export default connect()(Login)
