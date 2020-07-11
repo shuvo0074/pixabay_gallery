@@ -7,6 +7,7 @@ import store from '../store'
 import ImageBox from '../components/ImageBox'
 
 function Profile (props) {
+
   const [name,setName]=useState('')
   useEffect(()=>{
     setName(store.getState().userName)
@@ -22,7 +23,6 @@ function Profile (props) {
                   <Image
                     style={profileStyles.avatar}
                     source={require("../res/img/ir_avatar_male.png")}
-                    // for female use "avatarFemale"
                   />
                 </View>
                 <View style={profileStyles.nameHolder}>
@@ -31,8 +31,9 @@ function Profile (props) {
                   </Text>
                 </View>
               </View>
-              {/*  basic info ends  */}
+              {/*  Profile info ends  */}
 
+              {/*  profile data starts  */}
               <View style={profileStyles.profileData}>
                 <View style={profileStyles.dataCount}>
                   <Text style={profileStyles.countTitle}>

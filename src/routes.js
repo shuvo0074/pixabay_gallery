@@ -14,6 +14,7 @@ import ImageDetail from './screens/ImageDetail'
 import { Provider } from "react-redux";
 import store from "./store";
 
+// three stacks under three tabs of app tab navigator
 const HomeStack = createCompatNavigatorFactory(createStackNavigator)(
 	{
 		Home: { screen: Home, navigationOptions:{headerShown:false}  },
@@ -40,9 +41,11 @@ const SearchStack = createCompatNavigatorFactory(createStackNavigator)(
 
 const Tab = createBottomTabNavigator();
 
+// App Tab navigator
 function HomeContainer() {
     return (
-      <Tab.Navigator screenOptions={options} tabBarOptions={{
+      <Tab.Navigator screenOptions={options} tabBarOptions={
+        {
           activeTintColor:'red',
           activeBackgroundColor:'#bdc3c7',
           labelStyle:{
@@ -50,7 +53,8 @@ function HomeContainer() {
               fontWeight:'bold',
               marginBottom:10 
             }
-        }}
+        }
+      }
       >
           <Tab.Screen name="Home" component={HomeStack} />
           <Tab.Screen name="Profile" component={LibraryStack}/>
@@ -59,6 +63,7 @@ function HomeContainer() {
     );
   }
 
+// pass screen props to home navigator
 function Home_Navigation({navigation}){
     return <HomeContainer screenProps={{ rootNavigation: navigation }} />
 }
@@ -70,13 +75,13 @@ const appRoutes = {
 const AppStack = createCompatNavigatorFactory(createStackNavigator)(appRoutes, options);
 
 const options = {
-    cardStyle: {
-      backgroundColor: "#fff"
-    },
-    navigationOptions: {
-      gesturesEnabled: true
-    }
-  };
+  cardStyle: {
+    backgroundColor: "#fff"
+  },
+  navigationOptions: {
+    gesturesEnabled: true
+  }
+};
 
 const AppNavigator = createSwitchNavigator(
     {

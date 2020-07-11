@@ -19,7 +19,7 @@ export default function Search (props) {
               <TextInput
                 style={searchStyles.searchBoxInput}
                 placeholderTextColor="#757575"
-                placeholder="Search"
+                placeholder="Search photos"
                 underlineColorAndroid="transparent"
                 onChangeText={setSearchTerm}
                 value={searchTerm}
@@ -37,15 +37,9 @@ export default function Search (props) {
                 <Image
                   source={require("../res/img/hobbies-and-free-time.png")}
                   style={searchStyles.searchBoxIcon}
+                  resizeMethod='resize'
                 />
-              <Text style={searchStyles.searchDialogueTitle}>
-                Search Imagine Radio
-              </Text>
-              <Text style={searchStyles.searchDialogueTxt}>
-                Find your favourite songs, artists,
-                {"\n"}
-                albums and playlists
-              </Text>
+                {/*Search background*/}
             </View>
           )}
 

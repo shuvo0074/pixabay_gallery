@@ -10,6 +10,8 @@ export default function LargeCardSlider (props) {
   const [hits,setHits]=useState([])
   const [category,setCategory]=useState('music')
   useEffect(()=>{
+
+    // For more params visit https://pixabay.com/api/docs
     let params=["orientation=vertical","category="+category,"editors_choice=true"]
     FetchService("GET",params)
     .then((response)=>{
@@ -17,6 +19,7 @@ export default function LargeCardSlider (props) {
     })
 
   },[props])
+
     if (hits.length>0)
     return(
     <View style={cardStyles.largeSliderHolder}>
@@ -35,6 +38,7 @@ export default function LargeCardSlider (props) {
             <View style={cardStyles.largeSliderItem}>
               <TouchableOpacity onPress={() => props.navigation.navigate('ImageDetail',{id:rowData.id})}>
                 <View style={cardStyles.imgBorderRadius}>
+                  {/* To cache image for faster loading */}
                   <FastImage
                     source={{uri:rowData.largeImageURL}}
                     style={cardStyles.largeSliderImg}
@@ -75,7 +79,8 @@ export default function LargeCardSlider (props) {
       />
     </View>
     )
-    else return(
+    // Loading
+    return(
       <ActivityIndicator/>
     )
 }

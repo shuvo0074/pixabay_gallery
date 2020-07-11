@@ -9,7 +9,6 @@ import {
 } from 'react-native-typography';
 
 const window = Dimensions.get('window');
-const { width } = Dimensions.get('window');
 
 
 export default{
@@ -39,6 +38,8 @@ export default{
     width: window.width - 85,
   },
   searchBoxIcon: {
+    height:window.height-290,
+    width:window.width-10,
     fontSize: 30,
     color: '#9E9E9E'
   },

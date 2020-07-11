@@ -1,10 +1,7 @@
 import { Platform, Dimensions, StatusBar } from "react-native";
-
-const window = Dimensions.get("window");
-
-const HEADER_MAX_HEIGHT = 400;
-const HEADER_MIN_HEIGHT = Platform.OS === "ios" ? 60 : 73;
-const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
+import {
+  Colors
+} from 'react-native/Libraries/NewAppScreen';
 
 const X_WIDTH = 375;
 const X_HEIGHT = 812;
@@ -34,5 +31,8 @@ export default{
   },
   content: {
     flex: 1
+  },
+  scrollView: {
+    backgroundColor: Colors.lighter,
   }
 }
